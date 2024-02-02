@@ -1,3 +1,4 @@
+// This is update with 992
 // Accordion Settings 
 const accSettings = {
   speed: 300, // Animation speed
