@@ -62,9 +62,10 @@ const accordion = (function(){
     }
   }
 })();
-
 $(document).ready(function(){
-  accordion.init(accSettings);
+  if(window.innerWidth >= 992) {
+    accordion.init(accSettings);
+  }
 });
 
 // Function to update .img-active and .tab-active classes based on the .active class of accordions
@@ -87,15 +88,19 @@ function updateActiveClasses() {
     }
 }
 
-// Event listeners for each accordion
-document.querySelectorAll('.accordion-1, .accordion-body-1, .accordion-2, .accordion-body-2, .accordion-3, .accordion-body-3, .accordion-4, .accordion-body-4').forEach(element => {
-    element.addEventListener('click', updateActiveClasses);
-});
+// Condition to add event listeners only if window width is 992px or more
+if(window.innerWidth >= 992) {
+    document.querySelectorAll('.accordion-1, .accordion-body-1, .accordion-2, .accordion-body-2, .accordion-3, .accordion-body-3, .accordion-4, .accordion-body-4').forEach(element => {
+        element.addEventListener('click', updateActiveClasses);
+    });
+}
 
 // Set accordion 1 active
 window.onload = function() {
-    var accordion1 = document.querySelector('#accordion-header-1');
-    if (accordion1) {
-        accordion1.click();
+    if(window.innerWidth >= 992) {
+        var accordion1 = document.querySelector('#accordion-header-1');
+        if (accordion1) {
+            accordion1.click();
+        }
     }
 };
