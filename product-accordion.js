@@ -1,5 +1,3 @@
-<script>
-
 // Accordion Settings 
 const accSettings = {
   speed: 300, // Animation speed
@@ -68,9 +66,7 @@ const accordion = (function(){
 $(document).ready(function(){
   accordion.init(accSettings);
 });
-</script>
 
-<script>
 // Function to update .img-active and .tab-active classes based on the .active class of accordions
 function updateActiveClasses() {
     // Loop through each accordion number
@@ -96,16 +92,10 @@ document.querySelectorAll('.accordion-1, .accordion-body-1, .accordion-2, .accor
     element.addEventListener('click', updateActiveClasses);
 });
 
-
-</script>
-
-<script>
+// Set accordion 1 active
 window.onload = function() {
     var accordion1 = document.querySelector('#accordion-header-1');
     if (accordion1) {
         accordion1.click();
     }
 };
-
-
-</script>
