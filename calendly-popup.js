@@ -1,5 +1,6 @@
-// This is V1.1 - Feb 7, 2024
+// This is V1.2 - Feb 13, 2024
 // Changed to trigger attribute instead of ID
+// Added for the instance user is on homepage the UTM will update
 document.addEventListener('DOMContentLoaded', function() {
     // Select all elements with the attribute trainual-button="calendly"
     var buttons = document.querySelectorAll('[trainual-button="calendly"]');
@@ -8,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(e) {
             e.preventDefault(); // Prevent default anchor behavior
 
-            // Convert slashes in the pathname to hyphens, excluding the leading slash
-            var utmTerm = window.location.pathname.slice(1).replace(/\//g, '-');
+            // Check if on the homepage or no URL path, default to "homepage", else convert slashes to hyphens
+            var pathname = window.location.pathname;
+            var utmTerm = pathname === '/' || pathname === '' ? 'homepage' : pathname.slice(1).replace(/\//g, '-');
             var encodedUTMTerm = encodeURIComponent(utmTerm);
 
             // Retrieve UTM parameters from session storage with 'query.' prefix
@@ -42,3 +44,4 @@ function getUTMParametersFromSession() {
 
     return utmParamsString;
 }
+
