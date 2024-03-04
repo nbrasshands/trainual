@@ -1,4 +1,4 @@
-// This is V1.4 - March 4, 2024
+// This is V1.5 - March 4, 2024
 // Changed to trigger attribute instead of ID
 // Added for the instance user is on homepage the UTM will update
 // Added for the instance user is on mobile the UTM will update
