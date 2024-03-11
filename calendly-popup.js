@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("UTM Parameters from Session Storage:", utmParams); // Log retrieved UTM parameters
 
             // Construct the Calendly URL with UTM parameters
-            var calendlyUrl = `https://calendly.com/d/2dz-wq6-6bk?utm_term=${encodedUTMTerm}${utmParams}`;
+            var calendlyUrl = `https://calendly.com/d/2dz-wq6-6bk?hide_gdpr_banner=1&utm_term=${encodedUTMTerm}${utmParams}`;
             console.log("Final Calendly URL:", calendlyUrl); // Log the final URL
 
             Calendly.initPopupWidget({url: calendlyUrl});
