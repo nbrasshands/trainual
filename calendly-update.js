@@ -48,18 +48,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const observer = new MutationObserver((mutationsList) => {
-        for (let mutation of mutationsList) {
-            if (mutation.removedNodes.length) {
-                const removed = Array.from(mutation.removedNodes).some(node =>
-                    node.querySelector('.calendly-overlay') || node.classList?.contains('calendly-overlay')
-                );
-                if (removed) {
-                    toggleCalendlyCookiePopup('none');
-                }
-            }
-        }
-    });
-
     observer.observe(document.body, { childList: true, subtree: true });
 });
